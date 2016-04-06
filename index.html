@@ -6,6 +6,7 @@
     <!--Bootstrap-->
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css">
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap-theme.min.css">
+
     <!--Style Sheet-->
     <link rel="stylesheet" href="assets/styles/style.css">
 </head>
@@ -15,11 +16,25 @@
     <!--SideNav-->
     <Header class="col-sm-2 sideNav">
         <div class="bucket">
-           
+            <input type="button" id="makeSort" Value=" Sort Dropdown By Make " />
+            <input type="button" id="modelSort" Value=" Sort Dropdown By Model " />
+            <input type="button" id="priceSort" Value=" Sort Dropdown By Price " />
+            <input type="button" id="odoSort" Value=" Sort Dropdown By Odometer " />
+            <input type="button" id="yearSort" Value=" Sort Dropdown By Year " />
         </div>
     </header>
 
-
+  <!--<select id="ddlList">
+  <option value="3">Three</option>
+  <option value="1">One</option>
+  <option value="0">Zero</option>
+  <option value="2">Two</option>
+  <option value="8">Eight</option>
+</select>
+<br/><br/>
+<input type="button" id="btnSort" Value=" Sort Dropdown By Text " />
+make, model, price, odometer reading (miles), and year of the vehicles.
+<input type="button" id="btnSortVal" Value=" Sort Dropdown By Value " />-->
 
 
     <!--NAvbar-->
@@ -80,17 +95,34 @@
         <!-- /.container-fluid -->
     </nav>
 
-<div class="container col-sm-offset-2">
-    <h2>Vehicle Listings:</h2>
-    <hr />
-    <div class="page"></div>
-</div>
+    <div class="container col-sm-offset-2">
+        <h2>Vehicle Listings:</h2>
+        <hr />
+        <div class="page"></div>
+    </div>
+
+
+    <!--<select id="ddlList">
+  <option value="3">Three</option>
+  <option value="1">One</option>
+  <option value="0">Zero</option>
+  <option value="2">Two</option>
+  <option value="8">Eight</option>
+</select>
+<br/><br/>
+<input type="button" id="btnSort" Value=" Sort Dropdown By Text " />
+make, model, price, odometer reading (miles), and year of the vehicles.
+<input type="button" id="btnSortVal" Value=" Sort Dropdown By Value " />-->
 
 
 
-<!--Cars-->
-<div class="cars col-sm-offset-3">  
-</div>
+
+
+
+
+    <!--Cars-->
+    <div id="lotList" class="cars col-sm-offset-3">
+    </div>
 
     <!--page numbers-->
     <div class="page_navigation"></div>
@@ -98,10 +130,10 @@
     <!--JS Components-->
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.2/jquery.min.js"></script>
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js"></script>
-    
+
     <!--Custom-->
     <script src="assets/apps/components/app.js"></script>
-    
+
 </body>
 
 </html>

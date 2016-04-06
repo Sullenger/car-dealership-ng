@@ -9,5 +9,8 @@
     background-color: grey;
 }
 .car{
-    width: 500px;
+    width:90%;
+}
+.panel-body{
+    padding-left:5%;
 }
