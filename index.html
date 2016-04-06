@@ -1,4 +1,4 @@
-<html>
+<html ng-app="carDealership">
 
 <head>
     <meta charset="UTF-8">
@@ -11,31 +11,21 @@
     <link rel="stylesheet" href="assets/styles/style.css">
 </head>
 
-<body>
+<body ng-controller="MainController as mc">
 
     <!--SideNav-->
     <Header class="col-sm-2 sideNav">
         <div class="bucket">
-            <input type="button" id="makeSort" Value=" Sort Dropdown By Make " />
-            <input type="button" id="modelSort" Value=" Sort Dropdown By Model " />
-            <input type="button" id="priceSort" Value=" Sort Dropdown By Price " />
-            <input type="button" id="odoSort" Value=" Sort Dropdown By Odometer " />
-            <input type="button" id="yearSort" Value=" Sort Dropdown By Year " />
+            {{2+2}}
+            
+            <button type="button" class="btn btn-block btn-default" ng-click="sortOrder = 'make'">Sort by Make</button>
+            <button type="button" class="btn btn-block btn-default" ng-click="sortOrder = 'model'">Sort by Model</button>
+            <button type="button" class="btn btn-block btn-default" ng-click="sortOrder = '-price'">Sort by Price</button>
+            <button type="button" class="btn btn-block btn-default" ng-click="sortOrder = 'miles'">Sort by Odometer</button>
+            <button type="button" class="btn btn-block btn-default" ng-click="sortOrder = '-year'">Sort by Year</button>
+            
         </div>
     </header>
-
-  <!--<select id="ddlList">
-  <option value="3">Three</option>
-  <option value="1">One</option>
-  <option value="0">Zero</option>
-  <option value="2">Two</option>
-  <option value="8">Eight</option>
-</select>
-<br/><br/>
-<input type="button" id="btnSort" Value=" Sort Dropdown By Text " />
-make, model, price, odometer reading (miles), and year of the vehicles.
-<input type="button" id="btnSortVal" Value=" Sort Dropdown By Value " />-->
-
 
     <!--NAvbar-->
     <nav class="navbar navbar-default">
@@ -72,23 +62,10 @@ make, model, price, odometer reading (miles), and year of the vehicles.
                 </ul>
                 <form class="navbar-form navbar-left" role="search">
                     <div class="form-group">
-                        <input type="text" class="form-control" placeholder="Search">
+                        <input type="text" class="form-control" ng-model="searchQuery" placeholder="Search">
                     </div>
-                    <button type="submit" class="btn btn-default">Submit</button>
                 </form>
-                <ul class="nav navbar-nav navbar-right">
-                    <li><a href="#">Link</a></li>
-                    <li class="dropdown">
-                        <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Dropdown <span class="caret"></span></a>
-                        <ul class="dropdown-menu">
-                            <li><a href="#">Action</a></li>
-                            <li><a href="#">Another action</a></li>
-                            <li><a href="#">Something else here</a></li>
-                            <li role="separator" class="divider"></li>
-                            <li><a href="#">Separated link</a></li>
-                        </ul>
-                    </li>
-                </ul>
+                
             </div>
             <!-- /.navbar-collapse -->
         </div>
@@ -98,41 +75,32 @@ make, model, price, odometer reading (miles), and year of the vehicles.
     <div class="container col-sm-offset-2">
         <h2>Vehicle Listings:</h2>
         <hr />
-        <div class="page"></div>
+        <div class="col-sm-offset-2">
+            <div class="panel panel-default" ng-repeat="car in carLot | filter: searchQuery | orderBy: sortOrder track by $index">
+                <div class="panel-heading">
+                    <h3 class="panel-title">{{car.year}} {{car.make}} - {{car.model}}</h3>
+                    <h3 class="panel-title">{{car.price}}</h3>
+                </div>
+                <div class="panel-body">
+                   <p>Description: {{car.description}}</p>
+                   <p>Color: {{car.color}}</p>
+                   <p>Odometer: {{car.miles}}</p>
+                   <p>Fuel Economy: Highway ({{car.highwayMileage.high}}-{{car.highwayMileage.low}})<br/>City: ({{car.cityMileage.high}}-{{car.cityMileage.low}})</p>
+                </div>
+            </div>
+        </div>
     </div>
 
 
-    <!--<select id="ddlList">
-  <option value="3">Three</option>
-  <option value="1">One</option>
-  <option value="0">Zero</option>
-  <option value="2">Two</option>
-  <option value="8">Eight</option>
-</select>
-<br/><br/>
-<input type="button" id="btnSort" Value=" Sort Dropdown By Text " />
-make, model, price, odometer reading (miles), and year of the vehicles.
-<input type="button" id="btnSortVal" Value=" Sort Dropdown By Value " />-->
-
-
-
-
-
-
-
-    <!--Cars-->
-    <div id="lotList" class="cars col-sm-offset-3">
-    </div>
-
-    <!--page numbers-->
-    <div class="page_navigation"></div>
 
     <!--JS Components-->
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.2/jquery.min.js"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.4.9/angular.min.js"></script>
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js"></script>
 
     <!--Custom-->
     <script src="assets/apps/components/app.js"></script>
+    <script src="assets/apps/components/main-controller.js"></script>
 
 </body>
 
