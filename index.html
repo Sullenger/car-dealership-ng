@@ -14,7 +14,7 @@
 <body class="ng-cloak" ng-controller="MainController as mc">
 
     <!--SideNav-->
-    <Header class="col-sm-2 sideNav">
+    <header class="col-sm-2 sideNav">
         <div class="bucket">
             {{2+2}}
             <button type="button" class="btn btn-block btn-default" ng-click="sortOrder = 'make'">Sort by Make</button>
@@ -45,20 +45,17 @@
                 </div>
             </form>
         </div>
-        <!-- /.navbar-collapse -->
-        </div>
-        <!-- /.container-fluid -->
     </nav>
 
     <!--Vehicle listings-->
     <div class="container col-sm-offset-2">
         <h2>Vehicle Listings:</h2>
         <hr />
-        <div class="col-sm-offset-2">
+        <div class="col-sm-offset-1">
             <div class="panel panel-success" ng-repeat="car in carLot | filter: searchQuery | orderBy: sortOrder track by $index">
                 <div class="panel-heading">
                     <h3 class="panel-title">{{car.year}} {{car.make}} - {{car.model}}</h3>
-                    <h3 class="panel-title">{{car.price}}</h3>
+                    <h3 class="pull-right">{{car.price}}</h3>
                 </div>
                 <div class="panel-body">
                     <p>Description: {{car.description}}</p>

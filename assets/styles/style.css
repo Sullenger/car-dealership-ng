@@ -14,6 +14,9 @@
 .panel-body{
     padding-left:5%;
 }
+.pull-right{
+    float: right;
+}
 [ng\:cloak], [ng-cloak], [data-ng-cloak], [x-ng-cloak], .ng-cloak, .x-ng-cloak {
   display: none !important;
 }
