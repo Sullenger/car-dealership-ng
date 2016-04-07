@@ -2,7 +2,6 @@ app.controller('MainController', function($scope, $http) {
     $scope.pageSize = 50;
     $scope.sYear = 1900;
     $scope.eYear = 2016;
-    $scope.sortOrder = 'make';
     $scope.carLot = [];
 
     $http.get('assets/packets/vehicles.json').success(function(data) {

@@ -30,6 +30,9 @@ hr{
 .car{
     width:90%;
 }
+.buttonGroup{
+    margin-top: 30px;
+}
 .panel{
     border: 1px solid black;
 }
@@ -50,6 +53,9 @@ hr{
 }
 .years{
     margin-top: 5px;
+}
+.yearLabel{
+    pointer-events: none;
 }
 #logo{
     font-family: 'Permanent Marker', cursive;

@@ -19,10 +19,11 @@
     <header class="col-sm-2 sideNav">
         <div class="bucket">
             <div>
+                <button type="button" class="btn yearLabel btn-block btn-default">Filter by Year</button>
                 <input type="text" ng-model="sYear" class="form-control years" placeholder="Starting Year">
                 <input type="text" ng-model="eYear" class="form-control years" placeholder="Ending Year">
             </div>
-            <button type="button" class="btn years btn-block btn-default" ng-click="sortOrder = 'make'">Sort by Make</button>
+            <button type="button" class="btn buttonGroup btn-block btn-default" ng-click="sortOrder = 'make'">Sort by Make</button>
             <button type="button" class="btn btn-block btn-default" ng-click="sortOrder = 'model'">Sort by Model</button>
             <button type="button" class="btn btn-block btn-default" ng-click="sortOrder = 'price'">Sort by Price</button>
             <button type="button" class="btn btn-block btn-default" ng-click="sortOrder = 'miles'">Sort by Odometer</button>
@@ -51,7 +52,6 @@
                 <ul class="nav navbar-nav">
                     <li><a class="hotDeals" href="#">Hot Deals!</a></li>
                     <li><a href="#">Locations</a></li>
-
                 </ul>
                 <form class="navbar-form navbar-left" role="search">
                     <div class="form-group">
@@ -88,7 +88,8 @@
                 <uib-pagination total-items="carLot.length" ng-model="currentPage" items-per-page="pageSize"></uib-pagination>
             </div>
             <!--Vehicle repeeater-->
-            <div class="panel" ng-repeat="car in carLot | filter: searchQuery | orderBy: sortOrder | startFrom: (currentPage - 1) * pageSize | limitTo: pageSize track by $index" ng-if="car.year >= sYear && car.year <= eYear">
+            <div class="panel" ng-repeat="car in carLot | filter: searchQuery | orderBy: sortOrder | startFrom: (currentPage - 1) * pageSize | limitTo: pageSize track by $index"
+            ng-if="car.year >= sYear && car.year <= eYear">
                 <div class="panel-heading panel-background" ng-if="car.year >= sYear && car.year <= eYear">
                     <h4><b>{{car.year}} {{car.make}} - {{car.model}}</b></h4>
                     <h3 class="pull-right">{{car.price | currency:"$"}}</h3>
