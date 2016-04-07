@@ -6,7 +6,7 @@
     left: 0px;
     background-size:auto;
     border-right: 4px solid #b5b5b7;
-    background-color: #252839
+    background-color: #252839;
 }
 .bucket{
     margin-top: 55px;
@@ -26,13 +26,12 @@ hr{
     border-radius: 2.5px;
     padding-bottom: 0px;
     padding-top: 1px;
-
 }
 .car{
     width:90%;
 }
 .panel{
-    border: 1px solid black
+    border: 1px solid black;
 }
 .panel-body{
     padding-left:5%;
@@ -65,6 +64,6 @@ button.md-fab {
     top: 90%;
     left: 95%;
 }    
-[ng\:cloak], [ng-cloak], [data-ng-cloak], [x-ng-cloak], .ng-cloak, .x-ng-cloak {
+.ng-cloak {
   display: none !important;
 }

@@ -5,8 +5,7 @@
     <title>Car Dealership</title>
     <!--Bootstrap-->
     <link href='https://fonts.googleapis.com/css?family=Permanent+Marker' rel='stylesheet' type='text/css'>
-    <link rel="stylesheet" href='
-https://cdnjs.cloudflare.com/ajax/libs/angular-material/1.0.7/angular-material.css'>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/angular-material/1.0.7/angular-material.css">
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css">
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap-theme.min.css">
 
@@ -60,11 +59,9 @@ https://cdnjs.cloudflare.com/ajax/libs/angular-material/1.0.7/angular-material.c
                     <li class="dropdown">
                         <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Contact Us <span class="caret"></span></a>
                         <ul class="dropdown-menu">
-                            <li><a href="#">Action</a></li>
-                            <li><a href="#">Another action</a></li>
-                            <li><a href="#">Something else here</a></li>
+                            <li><a  href="mailto:#">Email: sales@sullys.com</a></li>
                             <li role="separator" class="divider"></li>
-                            <li><a href="#">Separated link</a></li>
+                            <li><a href="tel:#">Phone: 888.888.8888</a></li>
                         </ul>
                     </li>
                 </ul>
@@ -74,8 +71,8 @@ https://cdnjs.cloudflare.com/ajax/libs/angular-material/1.0.7/angular-material.c
         <!-- /.container-fluid -->
     </nav>
 
-
     <!--Vehicle listings-->
+    <a name="top"></a>
     <div class="container col-sm-offset-2">
         <div>
             <h3>Vehicle Listings:</h3>
@@ -91,23 +88,19 @@ https://cdnjs.cloudflare.com/ajax/libs/angular-material/1.0.7/angular-material.c
                     <p><b>Description:</b> {{car.description}}</p>
                     <p><b>Color:</b> {{car.color}}</p>
                     <p><b>Odometer:</b> {{car.miles}}</p>
-                    <p><b>Fuel Economy:</b> Highway ({{car.highwayMileage.high}}-{{car.highwayMileage.low}})
-                        <br/>City: ({{car.cityMileage.high}}-{{car.cityMileage.low}})</p>
+                    <p><b>Fuel Economy:</b> Highway ({{car.highwayMileage.high}}-{{car.highwayMileage.low}}) - City: ({{car.cityMileage.high}}-{{car.cityMileage.low}})</p>
                 </div>
             </div>
-
-
-            <button type="button" class="md-fab"><span class="glyphicon glyphicon-triangle-top" aria-hidden="true"></span></button>
-
+            <a href="#top">
+                <button type="button" class="md-fab"><span class="glyphicon glyphicon-triangle-top" aria-hidden="true"></span></button>
+            </a>
         </div>
     </div>
-
 
 
     <!--JS Components-->
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.2/jquery.min.js"></script>
     <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.4.9/angular.min.js"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/angular-material/1.0.7/angular-material.js"></script>
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js"></script>
 
     <!--Custom-->
