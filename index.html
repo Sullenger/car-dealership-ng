@@ -15,10 +15,14 @@
 
 <body class="ng-cloak" ng-controller="MainController as mc">
 
-    <!--SideNav-->
+    <!--SideNav Field w/ buttons-->
     <header class="col-sm-2 sideNav">
         <div class="bucket">
-            <button type="button" class="btn btn-block btn-default" ng-click="sortOrder = 'make'">Sort by Make</button>
+            <div>
+                <input type="text" ng-model="sYear" class="form-control years" placeholder="Starting Year">
+                <input type="text" ng-model="eYear" class="form-control years" placeholder="Ending Year">
+            </div>
+            <button type="button" class="btn years btn-block btn-default" ng-click="sortOrder = 'make'">Sort by Make</button>
             <button type="button" class="btn btn-block btn-default" ng-click="sortOrder = 'model'">Sort by Model</button>
             <button type="button" class="btn btn-block btn-default" ng-click="sortOrder = 'price'">Sort by Price</button>
             <button type="button" class="btn btn-block btn-default" ng-click="sortOrder = 'miles'">Sort by Odometer</button>
@@ -26,7 +30,7 @@
         </div>
     </header>
 
-    <!--NAvbar-->
+    <!--Bootstrap NAvbar-->
 
     <nav class="navbar navbar-default">
         <div class="container-fluid">
@@ -45,7 +49,7 @@
             <!-- Collect the nav links, forms, and other content for toggling -->
             <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
                 <ul class="nav navbar-nav">
-                    <li><a href="#">Hot Deals</a></li>
+                    <li><a class="hotDeals" href="#">Hot Deals!</a></li>
                     <li><a href="#">Locations</a></li>
 
                 </ul>
@@ -59,7 +63,7 @@
                     <li class="dropdown">
                         <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Contact Us <span class="caret"></span></a>
                         <ul class="dropdown-menu">
-                            <li><a  href="mailto:#">Email: sales@sullys.com</a></li>
+                            <li><a href="mailto:#">Email: sales@sullys.com</a></li>
                             <li role="separator" class="divider"></li>
                             <li><a href="tel:#">Phone: 888.888.8888</a></li>
                         </ul>
@@ -79,8 +83,13 @@
         </div>
         <hr />
         <div class="col-sm-offset-1">
-            <div class="panel" ng-repeat="car in carLot | filter: searchQuery | orderBy: sortOrder track by $index">
-                <div class="panel-heading panel-background">
+            <!--top pagination-->
+            <div class="col-sm-offset-3">
+                <uib-pagination total-items="carLot.length" ng-model="currentPage" items-per-page="pageSize"></uib-pagination>
+            </div>
+            <!--Vehicle repeeater-->
+            <div class="panel" ng-repeat="car in carLot | filter: searchQuery | orderBy: sortOrder | startFrom: (currentPage - 1) * pageSize | limitTo: pageSize track by $index" ng-if="car.year >= sYear && car.year <= eYear">
+                <div class="panel-heading panel-background" ng-if="car.year >= sYear && car.year <= eYear">
                     <h4><b>{{car.year}} {{car.make}} - {{car.model}}</b></h4>
                     <h3 class="pull-right">{{car.price | currency:"$"}}</h3>
                 </div>
@@ -89,19 +98,25 @@
                     <p><b>Color:</b> {{car.color}}</p>
                     <p><b>Odometer:</b> {{car.miles}}</p>
                     <p><b>Fuel Economy:</b> Highway ({{car.highwayMileage.high}}-{{car.highwayMileage.low}}) - City: ({{car.cityMileage.high}}-{{car.cityMileage.low}})</p>
+                    <p><b>Vehicle VIN:</b> {{car._id}}</p>
                 </div>
             </div>
+            <!--FAB to top-->
             <a href="#top">
                 <button type="button" class="md-fab"><span class="glyphicon glyphicon-triangle-top" aria-hidden="true"></span></button>
             </a>
+            <!--bottom pagination-->
+            <div class="col-sm-offset-3">
+                <uib-pagination total-items="carLot.length" ng-model="currentPage" items-per-page="pageSize"></uib-pagination>
+            </div>
         </div>
     </div>
-
 
     <!--JS Components-->
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.2/jquery.min.js"></script>
     <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.4.9/angular.min.js"></script>
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js"></script>
+    <script src="assets\styles\ui-bootstrap-tpls-1.3.1.min.js"></script>
 
     <!--Custom-->
     <script src="assets/apps/components/app.js"></script>

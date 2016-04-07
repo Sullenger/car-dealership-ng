@@ -40,18 +40,24 @@ hr{
     float: right;
     color: #0598DA;
 }
+.hotDeals{
+    color: red!important;
+}
 .navbar-default{
     position: fixed;
     top: 0;
     width: 100%;
-} 
+}
+.years{
+    margin-top: 5px;
+}
 #logo{
     font-family: 'Permanent Marker', cursive;
     font-size: x-large;
     color: black;
     pointer-events: none;
     }
-button.md-fab {
+button.md-fab{
     background-color: #252839;
     color: white;
     font-size: xx-large;
@@ -64,6 +70,6 @@ button.md-fab {
     top: 90%;
     left: 95%;
 }    
-.ng-cloak {
+.ng-cloak{
   display: none !important;
 }
