@@ -19,6 +19,7 @@ hr{
 }
 .container{
     margin-top: 50px;
+    width:70%;
 }
 .panel-background{
     background-color: #f2b632;
@@ -28,7 +29,7 @@ hr{
     padding-top: 1px;
 }
 .car{
-    width:90%;
+    width:80%;
 }
 .buttonGroup{
     margin-top: 30px;
@@ -61,7 +62,6 @@ hr{
     font-family: 'Permanent Marker', cursive;
     font-size: x-large;
     color: black;
-    pointer-events: none;
     }
 button.md-fab{
     background-color: #252839;
