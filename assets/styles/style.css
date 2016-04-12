@@ -62,7 +62,6 @@ hr{
     font-family: 'Permanent Marker', cursive;
     font-size: x-large;
     color: black;
-    pointer-events: none;
     }
 button.md-fab{
     background-color: #252839;
