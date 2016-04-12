@@ -77,18 +77,18 @@
 
     <!--Vehicle listings-->
     <a name="top"></a>
-    <div class="container col-sm-offset-2">
+    <div class="container col-sm-offset-3">
         <div>
             <h3>Vehicle Listings:</h3>
         </div>
         <hr />
         <div class="col-sm-offset-1">
             <!--top pagination-->
-            <div class="col-sm-offset-3">
+            <div class="col-sm-offset-2">
                 <uib-pagination total-items="carLot.length" ng-model="currentPage" items-per-page="pageSize"></uib-pagination>
             </div>
             <!--Vehicle repeeater-->
-            <div class="panel" ng-repeat="car in carLot | filter: searchQuery | orderBy: sortOrder | startFrom: (currentPage - 1) * pageSize | limitTo: pageSize track by $index"
+            <div class="panel car" ng-repeat="car in carLot | filter: searchQuery | orderBy: sortOrder | startFrom: (currentPage - 1) * pageSize | limitTo: pageSize track by $index"
             ng-if="car.year >= sYear && car.year <= eYear">
                 <div class="panel-heading panel-background" ng-if="car.year >= sYear && car.year <= eYear">
                     <h4><b>{{car.year}} {{car.make}} - {{car.model}}</b></h4>
